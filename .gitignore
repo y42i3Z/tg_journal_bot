@@ -1,0 +1,28 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+.gradle
+/gradlew
+/gradlew.bat
+
+*/build/
+/build/
+*/allure-results/
+/allure-results/
+*/out/
+*/target/
+/gradle/wrapper/gradle-wrapper.jar
+
+.idea
+*.iws
+*.iml
+*.ipr

@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = "2.2.6.RELEASE"
+        dependencyManagementVersion = "1.0.9.RELEASE"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version "${dependencyManagementVersion}"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation "org.telegram:telegrambots-spring-boot-starter:4.8.1"
+    
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:5.7.0.202003110725-r'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
